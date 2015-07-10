@@ -68,6 +68,9 @@ PROPERTIES
   <property name="fsc.exec.name" value="fsc"/>
   <property name="comp.prop.name" value="compiler.properties"/>
 
+  <property name="compile.debug" value="true"/>
+  <property name="compile.debug.level" value="lines,vars,source"/>
+
 <!-- ===========================================================================
 INITIALISATION
 ============================================================================ -->
@@ -299,6 +302,8 @@ BUILD LOCAL REFERENCE (LOCKER) LAYER
   <!-- Build library -->
     <mkdir dir="${locker.dir}/lib/library"/>
     <javac
+      debug="${compile.debug}"
+      debuglevel="{compile.debug.level}"
       srcdir="${src.dir}/library"
       destdir="${locker.dir}/lib/library"
       source="1.4" target="1.4" deprecation="yes"
@@ -413,6 +418,8 @@ BUILD QUICK-TEST LAYER
   <!-- Build library -->
     <mkdir dir="${quick.dir}/lib/library"/>
     <javac
+      debug="${compile.debug}"
+      debuglevel="{compile.debug.level}"
       srcdir="${src.dir}/library"
       destdir="${quick.dir}/lib/library"
       source="1.4" target="1.4" deprecation="yes"
@@ -454,6 +461,8 @@ BUILD QUICK-TEST LAYER
   <!-- Build actors library -->
     <mkdir dir="${quick.dir}/lib/actors"/>
     <javac
+      debug="${compile.debug}"
+      debuglevel="{compile.debug.level}"
       srcdir="${src.dir}/actors"
       destdir="${quick.dir}/lib/actors"
       source="1.4" target="1.4" deprecation="yes"
@@ -613,6 +622,8 @@ TEST
   <!-- Build library -->
     <mkdir dir="${strap.dir}/lib/library"/>
     <javac
+      debug="${compile.debug}"
+      debuglevel="{compile.debug.level}"
       srcdir="${src.dir}/library"
       destdir="${strap.dir}/lib/library"
       source="1.4" target="1.4" deprecation="yes"
@@ -651,6 +662,8 @@ TEST
   <!-- Build actors library -->
     <mkdir dir="${strap.dir}/lib/actors"/>
     <javac
+      debug="${compile.debug}"
+      debuglevel="{compile.debug.level}"
       srcdir="${src.dir}/actors"
       destdir="${strap.dir}/lib/actors"
       source="1.4" target="1.4" deprecation="yes"
