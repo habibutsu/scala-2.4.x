@@ -1,0 +1,6 @@
+/lib/*.jar
+/tools/*.jar
+
+# target directories for ant build
+/build/
+/dists/
