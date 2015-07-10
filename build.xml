@@ -109,6 +109,18 @@ INITIALISATION
       <pathelement location="${lib.starr.jar}"/>
       <pathelement location="${comp.starr.jar}"/>
     </path>
+    <path id="locker.classpath">
+      <pathelement location="${locker.dir}/lib/library"/>
+      <pathelement location="${locker.dir}/lib/compiler"/>
+      <pathelement location="${fjbg.jar}"/>
+      <pathelement location="${msil.jar}"/>
+    </path>
+    <path id="quick.classpath">
+      <pathelement location="${quick.dir}/lib/library"/>
+      <pathelement location="${quick.dir}/lib/compiler"/>
+      <pathelement location="${fjbg.jar}"/>
+      <pathelement location="${msil.jar}"/>
+    </path>
   <!-- Finding out what system architecture is being used -->
     <condition property="os.win"><os family="windows"/></condition>
     <if><isset property="os.win"/><then>
@@ -205,12 +217,6 @@ SETUP
   </target>
 
   <target name="setup.locker" depends="setup, build.locker">
-    <path id="locker.classpath">
-      <pathelement location="${locker.dir}/lib/library"/>
-      <pathelement location="${locker.dir}/lib/compiler"/>
-      <pathelement location="${fjbg.jar}"/>
-      <pathelement location="${msil.jar}"/>
-    </path>
     <taskdef
       name="locker"
       classname="scala.tools.ant.Scalac"
@@ -218,12 +224,6 @@ SETUP
   </target>
 
   <target name="setup.quick" depends="setup, build">
-    <path id="quick.classpath">
-      <pathelement location="${quick.dir}/lib/library"/>
-      <pathelement location="${quick.dir}/lib/compiler"/>
-      <pathelement location="${fjbg.jar}"/>
-      <pathelement location="${msil.jar}"/>
-    </path>
     <taskdef
       name="quick" classname="scala.tools.ant.Scalac"
       classpathref="quick.classpath"/>
