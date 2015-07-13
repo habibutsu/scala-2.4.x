@@ -5,3 +5,8 @@
 # target directories for ant build
 /build/
 /dists/
+
+# IntelliJ IDEA
+.idea
+/out/
+*.iml
